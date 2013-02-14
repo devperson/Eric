@@ -1,0 +1,95 @@
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Common.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="Foreground" Value="{StaticResource TextBoxForeground}"/>
+        <Setter Property="Background" Value="{StaticResource TextBoxBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Padding" Value="1,2,1,1"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border SnapsToDevicePixels="true" x:Name="Bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <ScrollViewer Margin="{TemplateBinding Padding}" SnapsToDevicePixels="True" x:Name="PART_ContentHost"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="{StaticResource HoverTextBoxBackground}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource HoverTextBoxBorder}"/>
+                            <Setter Property="Foreground" Value="{StaticResource HoverTextBoxForeground}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="true">
+                            <Setter Property="Background" Value="{StaticResource FocusedTextBoxBackground}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource FocusedTextBoxBorder}"/>
+                            <Setter Property="Foreground" Value="{StaticResource FocusedTextBoxForeground}"/>
+                        </Trigger>
+                        <Trigger Property="IsReadOnly" Value="true">
+                            <Setter Property="Background" Value="{StaticResource TextBoxBackground}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+                            <Setter Property="Foreground" Value="{StaticResource TextBoxForeground}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" Value="{StaticResource DisabledTextBoxBackground}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource DisabledTextBoxBorder}"/>
+                            <Setter Property="Foreground" Value="{StaticResource DisabledTextBoxForeground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type PasswordBox}">
+        <Setter Property="Foreground" Value="{StaticResource TextBoxForeground}"/>
+        <Setter Property="Background" Value="{StaticResource TextBoxBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <Border SnapsToDevicePixels="true" x:Name="Bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <ScrollViewer Margin="{TemplateBinding Padding}" SnapsToDevicePixels="True" x:Name="PART_ContentHost"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="{StaticResource HoverTextBoxBackground}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource HoverTextBoxBorder}"/>
+                            <Setter Property="Foreground" Value="{StaticResource HoverTextBoxForeground}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="true">
+                            <Setter Property="Background" Value="{StaticResource FocusedTextBoxBackground}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource FocusedTextBoxBorder}"/>
+                            <Setter Property="Foreground" Value="{StaticResource FocusedTextBoxForeground}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" Value="{StaticResource DisabledTextBoxBackground}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource DisabledTextBoxBorder}"/>
+                            <Setter Property="Foreground" Value="{StaticResource DisabledTextBoxForeground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

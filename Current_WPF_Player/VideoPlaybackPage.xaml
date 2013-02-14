@@ -1,0 +1,26 @@
+﻿<Page x:Class="AnniPanel.VideoPlaybackPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1024"
+	Title="VideoPlaybackPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36"/>
+            <RowDefinition Height="226*"/>
+            <RowDefinition Height="36"/>
+            <RowDefinition Height="36"/>
+        </Grid.RowDefinitions>
+        <TextBox Name="VideoNameTextBox" Text="" IsReadOnly="True" Grid.Row="0"/>
+        <MediaElement Name="AnniVideo" Stretch="Fill" LoadedBehavior="Manual" Grid.RowSpan="1" Grid.Row="1" HorizontalAlignment="Center" MediaFailed="AnniVideo_MediaFailed"/>
+        <StackPanel HorizontalAlignment="Stretch" Grid.Row="2" >
+            <Slider Name="VideoTracker"></Slider>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
+            <Button Content="Play" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="25" Click="Button_Click_1"/>
+        </StackPanel>
+    </Grid>
+</Page>
